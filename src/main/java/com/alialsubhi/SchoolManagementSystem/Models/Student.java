@@ -1,9 +1,16 @@
 package com.alialsubhi.SchoolManagementSystem.Models;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lombok.*;
 
+import javax.persistence.*;
+
+@Entity
+@Getter
+@Setter
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "students")
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -11,6 +18,5 @@ public class Student {
 
     private String name;
     private String age;
-
 
 }
