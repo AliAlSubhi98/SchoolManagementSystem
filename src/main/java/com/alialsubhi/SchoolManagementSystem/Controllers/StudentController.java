@@ -40,4 +40,12 @@ public class StudentController {
     public Student createStudent(@RequestBody Student student) {
         return studentRepository.save(student);
     }
+/*
+    http://localhost:8080/api/students/create
+    {
+        "name": "moha",
+            "age": "56"
+    }
+*/
+
 }
