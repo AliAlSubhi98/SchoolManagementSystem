@@ -1,10 +1,16 @@
 package com.alialsubhi.SchoolManagementSystem.Models;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import lombok.*;
 
+import javax.persistence.*;
+
+@Entity
+@Getter
+@Setter
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "classes")
 public class Class {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
