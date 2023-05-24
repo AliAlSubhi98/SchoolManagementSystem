@@ -40,7 +40,8 @@ public class StudentController {
     public Student getStudent(@PathVariable("id") Long id) {
         Student student = studentService.getStudentById(id);
         return student;
-    }//http://localhost:8080/api/students/2*/
+    }//http://localhost:8080/api/students/2
+*/
 
 
     @PostMapping("/create")

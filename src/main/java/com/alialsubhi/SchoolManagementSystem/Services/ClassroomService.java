@@ -11,8 +11,16 @@ import java.util.List;
 public class ClassroomService {
     @Autowired
     ClassRepository classRepository;
-   public List<Classroom> getAllClasses(){
+   public List<Classroom> getAllClassrooms(){
         return classRepository.findAll();
+    }
+
+    public Classroom createClassroom(Classroom classroom) {
+        return classRepository.save(classroom);
+    }
+
+    public Classroom getClassroomById(Long id) {
+        return classRepository.findById(id).get();
     }
 
 }
