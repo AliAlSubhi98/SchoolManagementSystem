@@ -14,7 +14,7 @@ public class StudentService {
     StudentRepository studentRepository;
 
     public List<Student>getAllStudents(){
-    return studentRepository.findAll();
+         return studentRepository.findAll();
     }
 
     public Student createStudent(Student student) {
@@ -24,5 +24,7 @@ public class StudentService {
     public Student getStudentById(Long id) {
         return studentRepository.findById(id).orElse(null);
     }
+
+
 
 }

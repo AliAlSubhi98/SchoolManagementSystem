@@ -34,6 +34,14 @@ public class StudentController {
         return ResponseEntity.ok(student);
     }//http://localhost:8080/api/students/2
 
+/*
+    this work
+    @GetMapping("/{id}")
+    public Student getStudent(@PathVariable("id") Long id) {
+        Student student = studentService.getStudentById(id);
+        return student;
+    }//http://localhost:8080/api/students/2*/
+
 
     @PostMapping("/create")
     public Student createStudent(@RequestBody Student student) {
