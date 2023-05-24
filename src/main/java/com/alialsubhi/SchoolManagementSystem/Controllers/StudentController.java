@@ -24,17 +24,15 @@ public class StudentController {
     }//http://localhost:8080/api/students/getAll
 
 
-    @Autowired
-    StudentRepository studentRepository;
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Student> getStudent(@PathVariable("id") Long id) {
-        Student student = studentRepository.findById(id).orElse(null);
+        Student student = studentService.getStudentById(id);
         if (student == null) {
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(student);
-    }
+    }//http://localhost:8080/api/students/2
 
 
     @PostMapping("/create")
