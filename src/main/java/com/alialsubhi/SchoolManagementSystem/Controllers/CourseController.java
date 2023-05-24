@@ -15,12 +15,27 @@ public class CourseController {
     CourseService courseService;
 
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
-    public List<Course> getAllCourses(){
+    public List<Course> getAllCourses() {
         return courseService.getAllCourses();
     }
 
     @PostMapping("/create")
-    public Course createCourse(@RequestBody Course course){
+    public Course createCourse(@RequestBody Course course) {
         return courseService.createCourse(course);
     }
+
+    @GetMapping("/{id}")
+    public Course getCourse(@PathVariable("id") Long id) {
+        Course course = courseService.getCourseById(id);
+        return course;
+    }
+
+    @DeleteMapping
+    public void deleteCourse(@PathVariable Long id) {
+        courseService.deleteCourse(id);
+
+    }
+
+
 }
+
