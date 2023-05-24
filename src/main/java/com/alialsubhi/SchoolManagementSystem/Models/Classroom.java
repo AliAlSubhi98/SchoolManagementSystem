@@ -3,6 +3,7 @@ package com.alialsubhi.SchoolManagementSystem.Models;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -20,6 +21,6 @@ public class Classroom {
     @ManyToOne
     private Teacher teacher;
 
-    @ManyToOne
-    private Course course;
+    @OneToMany
+    private List<Course> course;
 }

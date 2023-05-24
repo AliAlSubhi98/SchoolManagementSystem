@@ -24,6 +24,10 @@ public class StudentService {
         return studentRepository.findById(id).orElse(null);
     }
 
+    public void deleteStudent(Long id){
+        studentRepository.deleteById(id);
+    }
+
 
 
 }
