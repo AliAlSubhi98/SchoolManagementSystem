@@ -8,7 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+//git config --global user.name "AliAlSubhi98"
+//--global user.email "alialsubhi1998@gmail.com"
 @RestController
 @RequestMapping(value = "/api/students")
 public class StudentController {
@@ -38,7 +39,7 @@ public class StudentController {
 
     @PostMapping("/create")
     public Student createStudent(@RequestBody Student student) {
-        return studentRepository.save(student);
+        return studentService.createStudent(student);
     }
 /*
     http://localhost:8080/api/students/create

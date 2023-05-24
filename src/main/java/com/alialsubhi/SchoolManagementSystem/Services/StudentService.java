@@ -4,6 +4,7 @@ import com.alialsubhi.SchoolManagementSystem.Models.Student;
 import com.alialsubhi.SchoolManagementSystem.Repositories.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -14,5 +15,9 @@ public class StudentService {
 
     public List<Student>getAllStudents(){
     return studentRepository.findAll();
+    }
+
+    public Student createStudent(Student student) {
+        return studentRepository.save(student);
     }
 }
