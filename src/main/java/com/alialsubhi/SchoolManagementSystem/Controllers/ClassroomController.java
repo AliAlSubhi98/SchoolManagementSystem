@@ -32,4 +32,8 @@ public class ClassroomController {
         return classroomService.createClassroom(classroom);
     }
 
+    @DeleteMapping("/delete/{id}")
+    public void deleteClassroom(@PathVariable Long id){
+        classroomService.deleteClassroom(id);
+    }
 }

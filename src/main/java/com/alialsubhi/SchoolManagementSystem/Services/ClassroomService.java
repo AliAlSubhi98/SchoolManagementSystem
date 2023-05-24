@@ -23,4 +23,8 @@ public class ClassroomService {
         return classRepository.findById(id).get();
     }
 
+    public void deleteClassroom(Long id){
+       classRepository.deleteById(id);
+    }
+
 }
