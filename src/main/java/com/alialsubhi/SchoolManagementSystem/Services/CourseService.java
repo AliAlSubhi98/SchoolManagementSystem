@@ -28,4 +28,13 @@ public class CourseService {
     public void deleteCourse(Long id){
         courseRepository.deleteById(id);
     }
+
+    public Course updateCourse(Long id , Course updateCourse){
+        Course course = courseRepository.findById(id).get();
+        course.setName(updateCourse.getName());
+        course.setDescription(updateCourse.getDescription());
+        course.setClassroom(updateCourse.getClassroom());
+
+        return courseRepository.save(course);
+    }
 }
