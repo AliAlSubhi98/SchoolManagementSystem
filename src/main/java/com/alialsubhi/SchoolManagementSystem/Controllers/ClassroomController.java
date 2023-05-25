@@ -36,4 +36,15 @@ public class ClassroomController {
     public void deleteClassroom(@PathVariable Long id){
         classroomService.deleteClassroom(id);
     }
+
+    @PutMapping("/{id}")
+    public Classroom updateClassroom(@PathVariable Long id ,
+                                     @RequestBody Classroom updatedClassroom){
+
+        Classroom classroom = classroomService.updateClassroom(id,updatedClassroom);
+        return classroom;
+
+    }
+
+
 }

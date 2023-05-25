@@ -27,4 +27,13 @@ public class ClassroomService {
        classRepository.deleteById(id);
     }
 
+    public Classroom updateClassroom(Long id , Classroom updatedClassroom){
+       Classroom classroom = classRepository.findById(id).get();
+
+       classroom.setCourse(updatedClassroom.getCourse());
+       classroom.setSize(updatedClassroom.getSize());
+
+       return classroom;
+
+    }
 }

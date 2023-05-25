@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 //git config --global user.name "AliAlSubhi98"
 //--global user.email "alialsubhi1998@gmail.com"
@@ -19,9 +20,19 @@ public class StudentController {
 
 
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
-    public List<Student> getAllStudents(){
-        return studentService.getAllStudents();
-    }//http://localhost:8080/api/students/getAll
+    public List<Student> getAllStudents() {
+        List<Student> allStudents = studentService.getAllStudents();
+        List<Student> activeStudents = new ArrayList<>();
+
+        for (Student student : allStudents) {
+            if (student.isActive()) {
+                activeStudents.add(student);
+            }
+        }
+
+        return activeStudents;
+    }
+//http://localhost:8080/api/students/getAll
 
 
 

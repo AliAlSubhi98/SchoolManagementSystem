@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Getter
 @Entity
 @Data
-public class StudentCourse {
+public class StudentCourse extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;

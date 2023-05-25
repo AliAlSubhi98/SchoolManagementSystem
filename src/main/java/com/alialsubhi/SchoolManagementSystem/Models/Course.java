@@ -13,14 +13,14 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "courses")
-public class Course {
+public class Course extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
     private String description;
-    private String code;
+        private String code;
 
     @ManyToOne
     @JoinColumn(name = "class_id")
