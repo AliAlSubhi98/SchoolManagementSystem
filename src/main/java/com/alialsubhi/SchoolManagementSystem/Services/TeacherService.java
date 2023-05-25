@@ -35,6 +35,8 @@ public class TeacherService {
         if (teacher != null) {
             teacher.setName(updatedTeacher.getName());
             teacher.setPhone(updatedTeacher.getPhone());
+            teacher.setSpecialization(updatedTeacher.getSpecialization());
+            teacher.setAge(updatedTeacher.getAge());
             // Set other properties you want to update
 
             return teacherRepository.save(teacher);
