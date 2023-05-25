@@ -17,5 +17,10 @@ public class Teacher {
     private Long id;
 
     private String name;
+    private String phone;
     private String specialization;
+    private int age;
+
+    @OneToOne
+    Course course;
 }
