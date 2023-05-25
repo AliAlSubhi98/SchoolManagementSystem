@@ -4,6 +4,8 @@ import com.alialsubhi.SchoolManagementSystem.Models.Student;
 import com.alialsubhi.SchoolManagementSystem.Models.Teacher;
 import com.alialsubhi.SchoolManagementSystem.Services.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -36,4 +38,18 @@ public class TeacherController {
         teacherService.deleteTeacher(id);
     }
 
+    @PutMapping("/{id}")
+    public Teacher updateTeacher
+            (
+            @PathVariable("id") Long id,
+            @RequestBody Teacher updatedTeacher
+            )
+    {
+        Teacher teacher = teacherService.updateTeacher(id, updatedTeacher);
+        if (teacher != null) {
+            return teacher;
+        } else {
+            return null;
+        }
+    }
 }

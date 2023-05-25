@@ -29,4 +29,17 @@ public class TeacherService {
     public void deleteTeacher(Long id){
         teacherRepository.deleteById(id);
     }
+
+    public Teacher updateTeacher(Long id, Teacher updatedTeacher) {
+        Teacher teacher = teacherRepository.findById(id).orElse(null);
+        if (teacher != null) {
+            teacher.setName(updatedTeacher.getName());
+            teacher.setPhone(updatedTeacher.getPhone());
+            // Set other properties you want to update
+
+            return teacherRepository.save(teacher);
+        }
+
+        return null ;
+    }
 }
