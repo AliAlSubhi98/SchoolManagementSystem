@@ -40,10 +40,8 @@ public class TeacherController {
 
     @PutMapping("/{id}")
     public Teacher updateTeacher
-            (
-            @PathVariable("id") Long id,
-            @RequestBody Teacher updatedTeacher
-            )
+            (@PathVariable("id") Long id,
+            @RequestBody Teacher updatedTeacher)
     {
         Teacher teacher = teacherService.updateTeacher(id, updatedTeacher);
         if (teacher != null) {
