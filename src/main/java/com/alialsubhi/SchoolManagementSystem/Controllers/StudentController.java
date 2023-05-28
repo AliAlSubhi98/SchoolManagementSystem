@@ -2,6 +2,7 @@ package com.alialsubhi.SchoolManagementSystem.Controllers;
 
 import com.alialsubhi.SchoolManagementSystem.Models.Student;
 import com.alialsubhi.SchoolManagementSystem.Repositories.StudentRepository;
+import com.alialsubhi.SchoolManagementSystem.ResponseObject.AddStudentResponse;
 import com.alialsubhi.SchoolManagementSystem.Services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +20,7 @@ public class StudentController {
     StudentService studentService;
 
 
-    @RequestMapping(value = "/getAll", method = RequestMethod.GET)
+/*    @RequestMapping(value = "/getAll", method = RequestMethod.GET)
     public List<Student> getAllStudents() {
         List<Student> allStudents = studentService.getAllStudents();
         List<Student> activeStudents = new ArrayList<>();
@@ -31,9 +32,14 @@ public class StudentController {
         }
 
         return activeStudents;
-    }
+    }*/
 //http://localhost:8080/api/students/getAll
 
+/*
+    @RequestMapping(value = "/getAll", method = RequestMethod.GET)
+    public List<AddStudentResponse> student
+
+*/
 
 
     @GetMapping("/{id}")
