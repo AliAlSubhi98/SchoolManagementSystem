@@ -13,10 +13,10 @@ import javax.persistence.*;
 public class StudentCourse extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
-    Integer grade;
+    private Integer id;
+    private Float grade;
     @ManyToOne
-    Course course;
+    private Course course;
     @ManyToOne
-    Student student;
+    private Student student;
 }

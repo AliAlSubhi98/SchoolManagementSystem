@@ -17,12 +17,12 @@ public class Classroom extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private int size;
+    private Float area;
     private String code;
 
     @ManyToOne
     private Teacher teacher;
 
     @OneToMany(mappedBy = "id")
-    private List<Course> course = new ArrayList<>();
+    private List<Course> course;
 }

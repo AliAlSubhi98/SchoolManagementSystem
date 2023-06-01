@@ -31,7 +31,7 @@ public class ClassroomService {
        Classroom classroom = classRepository.findById(id).get();
 
        classroom.setCourse(updatedClassroom.getCourse());
-       classroom.setSize(updatedClassroom.getSize());
+       classroom.setArea(updatedClassroom.getArea());
 
        return classroom;
 

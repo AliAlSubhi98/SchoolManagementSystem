@@ -16,17 +16,18 @@ public class AddStudentRequest {
     private Long id;
 
     private String name;
-    private String age;
+    private Integer age;
     private String gender;
 
     public Student convertToStudent(){
         Date currentDate = new Date();
         Student student = new Student();
 
+        student.setId(this.getId());
         student.setName(this.getName());
         student.setAge(this.getAge());
         student.setGender(this.getGender());
-        student.setActive(true);
+        student.setIsActive(true);
         student.setCreatedDate(currentDate);
         student.setUpdatedDate(currentDate);
 

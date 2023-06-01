@@ -20,10 +20,10 @@ public class Student extends BaseEntity{
     private Long id;
 
     private String name;
-    private String age;
+    private Integer age;
     private String gender;
     private String email;
     @OneToMany(mappedBy = "student")
-    List<StudentCourse> studentCourses = new ArrayList<>();
+    List<StudentCourse> studentCourses;
 
 }

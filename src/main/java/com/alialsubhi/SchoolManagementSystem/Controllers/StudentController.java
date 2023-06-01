@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+
 //git config --global user.name "AliAlSubhi98"
 //--global user.email "alialsubhi1998@gmail.com"
 @RestController
@@ -35,11 +36,22 @@ public class StudentController {
     }*/
 //http://localhost:8080/api/students/getAll
 
-/*
-    @RequestMapping(value = "/getAll", method = RequestMethod.GET)
-    public List<AddStudentResponse> student
+    @RequestMapping(value = "/getAllRequest", method = RequestMethod.GET)
+    public List<AddStudentResponse> getAllStudentRequest() {
+        List<Student> students = studentService.getAllStudents();
+        List<AddStudentResponse> studentResponses = new ArrayList<>();
 
-*/
+        for (Student student : students) {
+            var studentsResponse = new AddStudentResponse(
+                    student.getId(),
+                    student.getName(),
+                    student.getAge(),
+                    student.getGender()
+            );
+            studentResponses.add(studentsResponse);
+        }
+        return studentResponses;
+    }
 
 
     @GetMapping("/{id}")
@@ -75,14 +87,13 @@ public class StudentController {
 
 
     @DeleteMapping("/delete/{id}")
-    public void deleteStudent(@PathVariable Long id){
+    public void deleteStudent(@PathVariable Long id) {
         studentService.deleteStudent(id);
     }
 
     @PutMapping("/{id}")
-    public Student updateStudent(@PathVariable Long id ,
-                                 @RequestBody Student updatedStudent)
-    {
+    public Student updateStudent(@PathVariable Long id,
+                                 @RequestBody Student updatedStudent) {
         Student student = studentService.updateStudent(id, updatedStudent);
         return student;
     }

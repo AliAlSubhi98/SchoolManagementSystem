@@ -19,7 +19,7 @@ public abstract class BaseEntity {
 
     private Date createdDate;
 
-    private boolean isActive;
+    private Boolean isActive;
     private Date updatedDate;
 
 }

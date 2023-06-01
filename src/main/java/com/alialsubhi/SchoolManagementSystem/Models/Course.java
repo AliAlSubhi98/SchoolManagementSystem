@@ -20,17 +20,17 @@ public class Course extends BaseEntity{
 
     private String name;
     private String description;
-        private String code;
+    private String code;
 
     @ManyToOne
-    @JoinColumn(name = "class_id")
+/*    @JoinColumn(name = "id")*/
     Classroom classroom;
 
     @OneToOne
     //@JoinColumn(name = "teacher_id")
     Teacher teacher;
     @OneToMany(mappedBy = "course")
-    List<StudentCourse> studentsCourses = new ArrayList<>();
+    List<StudentCourse> studentsCourses ;
 
 
 }

@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Date;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -14,8 +16,9 @@ public class AddStudentResponse {
     private Long id;
 
     private String name;
-    private String age;
+    private Integer age;
     private String gender;
+
 
 
 }
